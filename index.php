@@ -160,15 +160,14 @@ $table_tag3 = $phpQueryObj3['#re_main img'];
 						<div class="fh5co-service text-center">
 							<?php echo "<img src ='".pq($table_tag)[0]->attr('src')."' width='46px;'>"; ?>
 							<h3>Yahoo占い<br><?php echo $ranking; ?></h3>
-							<p>
 							<?php 
 								foreach($table_tag as $val) {
 									if (strpos(pq($val)->attr('src'),'yftn_md20_12astro08')=== false) {
-										echo "<img src ='".pq($val)->attr('src')."'>";
-										echo "<p>".pq($val)->attr('alt')."</p>";
+										echo "<img src ='".pq($val)->attr('src')."' width='100px'><br>";
+										echo "<span>".pq($val)->attr('alt')."</span><br>";
 									}
 								}
-							 ?></p>
+							 ?>
 						</div>
 						</a>
 					</div>
@@ -191,6 +190,23 @@ $table_tag3 = $phpQueryObj3['#re_main img'];
 						<a href="https://uranai.nifty.com/f12seiza/sasori/" title="">
 						<div class="fh5co-service text-center">
 							<?php echo "<img src ='https://uranai.nifty.com/images/bt_sasori.gif' width='46px;'>"; ?>
+							<h3>占い@nifty<br><?php echo $ranking3; ?></h3>
+							<p>
+							<?php 
+								foreach($table_tag3 as $val) {
+									if (preg_match('/mony|job|love/',pq($val)->attr('src'))) {
+										echo "<img src ='https://uranai.nifty.com".pq($val)->attr('src')."'>";
+										echo '<br>';
+									}
+								}
+							 ?></p>
+						</div>
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="http://eonet.jp/fortune/constellation/result.php?conste=scorpio" title="">
+						<div class="fh5co-service text-center">
+							<?php echo "<img src ='http://eonet.jp/fortune/images/parts/img_main8.png' width='46px;'>"; ?>
 							<h3>i無料占い<br><?php echo $ranking3; ?></h3>
 							<p>
 							<?php 
